@@ -1,0 +1,3 @@
+# Module santacruzpilot
+# RPC service class, partial path of RPC policy file
+com.santacruzpilot.client.GreetingService, E34EA871E6C780F5151D4FD54D91DFC1.gwt.rpc
