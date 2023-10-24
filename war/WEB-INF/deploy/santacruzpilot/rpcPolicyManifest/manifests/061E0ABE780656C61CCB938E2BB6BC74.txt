@@ -1,0 +1,2 @@
+serviceClass: com.santacruzpilot.client.GreetingService
+path: E34EA871E6C780F5151D4FD54D91DFC1.gwt.rpc
