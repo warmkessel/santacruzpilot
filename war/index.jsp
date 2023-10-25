@@ -35,15 +35,15 @@ if (message != null) {
 	try {
 		// Create a new email message
 		Message msg = new MimeMessage(mailSession);
-		if(null != currentUser){
-			msg.setFrom(new InternetAddress(currentUser.getEmail(), currentUser.getNickname()));
-		}
-		else{
-			msg.setFrom(new InternetAddress("jr@warmkessel.com", "SantaCruz Pilot"));
+		if (null != currentUser) {
+	msg.setFrom(new InternetAddress(currentUser.getEmail(), currentUser.getNickname()));
+		} else {
+	msg.setFrom(new InternetAddress("jr@warmkessel.com", "SantaCruz Pilot"));
 		}
 		msg.addRecipient(Message.RecipientType.TO, new InternetAddress("jr@warmkessel.com", "SantaCruz Pilot"));
 		msg.setSubject("SantaCruz Pilot");
-		msg.setText("firstname: " + firstname + "\r" + "lastname: " + lastname + "\r" + "phone: " + phone + "email: " + mail + "\r" + message + "\r" + requestUrl);
+		msg.setText("firstname: " + firstname + "\r" + "lastname: " + lastname + "\r" + "phone: " + phone + "email: "
+		+ mail + "\r" + message + "\r" + requestUrl);
 
 		// Send the email
 		Transport.send(msg);
@@ -90,7 +90,8 @@ if (message != null) {
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="/css/team.css" rel="stylesheet" type="text/css" media="all" />
-<link href="/css/header.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/header.css" rel="stylesheet" type="text/css"
+	media="all" />
 <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- /css files -->
 <!-- js files -->
@@ -156,7 +157,8 @@ if (message != null) {
 			<div class="slider">
 				<ul class="slider-main">
 					<li class="slider-panel"><img alt="W3layouts"
-						title="W3layouts" src="/images/banner1.webp" class="img-responsive">
+						title="W3layouts" src="/images/banner1.webp"
+						class="img-responsive">
 						<div class="banner-info">
 							<div class="row">
 								<div class="col-lg-12">
@@ -167,7 +169,8 @@ if (message != null) {
 							</div>
 						</div></li>
 					<li class="slider-panel"><img alt="W3layouts"
-						title="W3layouts" src="/images/banner2.webp" class="img-responsive">
+						title="W3layouts" src="/images/banner2.webp"
+						class="img-responsive">
 						<div class="banner-info">
 							<div class="row">
 								<div class="col-lg-12">
@@ -178,7 +181,8 @@ if (message != null) {
 							</div>
 						</div></li>
 					<li class="slider-panel"><img alt="W3layouts"
-						title="W3layouts" src="/images/banner3.webp" class="img-responsive">
+						title="W3layouts" src="/images/banner3.webp"
+						class="img-responsive">
 						<div class="banner-info">
 							<div class="row">
 								<div class="col-lg-12">
@@ -189,7 +193,8 @@ if (message != null) {
 							</div>
 						</div></li>
 					<li class="slider-panel"><img alt="W3layouts"
-						title="W3layouts" src="/images/banner5.webp" class="img-responsive">
+						title="W3layouts" src="/images/banner5.webp"
+						class="img-responsive">
 						<div class="banner-info">
 							<div class="row">
 								<div class="col-lg-12">
@@ -540,32 +545,34 @@ if (message != null) {
 			</div>
 			<div class="col-lg-6 col-md-6 contact-wthree2">
 				<h3 class="head2">Your Comments</h3>
-				<form action="<%=Constants.INSTRUCTION %>" method="post">
+				<form action="<%=Constants.INDEX%>" method="post" id="qform">
 					<div class="row">
 						<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
 							<input type="text" class="form-control first-name"
-								name="<%=Constants.FIRSTNAME%>" placeholder="First Name" required />
+								name="<%=Constants.FIRSTNAME%>" placeholder="First Name"
+								required />
 						</div>
 						<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
-							<input type="text" class="form-control last-name" name="<%=Constants.LASTNAME%>"
-								placeholder="Last Name" required />
+							<input type="text" class="form-control last-name"
+								name="<%=Constants.LASTNAME%>" placeholder="Last Name" required />
 						</div>
 						<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
-							<input type="email" class="form-control mail" name="<%=Constants.MAIL%>"
-								placeholder="Your Email" required />
+							<input type="email" class="form-control mail"
+								name="<%=Constants.MAIL%>" placeholder="Your Email" required />
 						</div>
 						<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
-							<input type="tel" class="form-control pno" name="<%=Constants.PHONE%>"
-								placeholder="Your Phone Number" required />
+							<input type="tel" class="form-control pno"
+								name="<%=Constants.PHONE%>" placeholder="Your Phone Number"
+								required />
 						</div>
 						<div class="clearfix"></div>
 						<div class="form-group col-lg-12 slideanim">
-							<textarea class="form-control" rows="6" name="<%=Constants.MESSAGE%>"
-								placeholder="Your Message"></textarea>
+							<textarea class="form-control" rows="6"
+								name="<%=Constants.MESSAGE%>" placeholder="Your Message"></textarea>
 						</div>
 						<div class="form-group col-lg-12 slideanim">
-							<button type="submit" class="btn btn-lg btn-outline">Send
-								Message</button>
+							<button class="g-recaptcha btn btn-lg btn-outline" data-sitekey="6LcPLsgoAAAAALzcUhAA6NfIx0D-ZzUDjF4CfRbV"
+								data-callback='onSubmit' data-action='submit'>Submit</button>
 						</div>
 					</div>
 				</form>
@@ -616,7 +623,6 @@ if (message != null) {
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 		crossorigin="anonymous"></script>
-
 	<script src="js/main.js"></script>
 	<!-- js for statistics -->
 	<script type="text/javascript" src="js/numscroller-1.0.js"></script>
@@ -648,5 +654,14 @@ if (message != null) {
 	</script>
 	<!-- /js for banner -->
 	<!-- /js files -->
+		<!-- js recaptcha -->
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<script>
+		function onSubmit(token) {
+			document.getElementById("qform").submit();
+		}
+	</script>
+	<!-- /js recaptcha -->
+
 </body>
 </html>

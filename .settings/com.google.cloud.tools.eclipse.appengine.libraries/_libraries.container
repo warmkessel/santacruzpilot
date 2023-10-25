@@ -1,3 +1,6 @@
 [
-  "appengine-api"
+  "appengine-api",
+  "appengine-endpoints",
+  "googlecloudstorage",
+  "recaptcha"
 ]
